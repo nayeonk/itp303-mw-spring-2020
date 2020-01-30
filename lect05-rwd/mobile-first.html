@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RWD - mobile first </title>
+	<style>
+		/* These are default CSS used for mobile screens */
+		#container {
+			background-color: green;
+		}
+		.column {
+			min-height: 100px;
+			box-sizing: border-box;
+		}
+		.half {
+			border: 1px solid purple;
+			background-color: pink;
+		}
+		.fourth {
+			border: 1px solid blue;
+			background-color: skyblue;
+		}
+		.row:after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		/* Media queries for larger devices */
+		@media(min-width: 572px) {
+			/* Screens larger than 572px will use the following CSS */
+			.half {
+				width: 50%;
+				float: left;
+			}
+			.fourth {
+				width: 50%;
+				float: left;
+			}
+		}
+		@media(min-width: 768px) {
+			/* Screens larger than 768px will use the following CSS */
+			.fourth {
+				width: 25%;
+				float: left;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div id="container">
+		<div class="row">
+			<div class="column half">
+				I'm half
+			</div>
+			<div class="column half">
+				I'm half
+			</div>
+		</div>
+		<div class="row">
+			<div class="column fourth">
+				I'm a fourth
+			</div>
+			<div class="column fourth">
+				I'm a fourth
+			</div>
+			<div class="column fourth">
+				I'm a fourth
+			</div>
+			<div class="column fourth">
+				I'm a fourth
+			</div>
+		</div>
+	</div> <!-- end of #responsive -->
+
+</body>
+</html>

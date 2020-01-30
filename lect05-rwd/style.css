@@ -1,0 +1,156 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+#header {
+	height: 400px;
+	line-height: 400px;
+	background-image: url("images/bookstore-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+#header h1 {
+	font-size: 40px;
+	color: white;
+	margin: 0;
+}
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+#best-seller, #sale {
+	padding-top: 20px;
+	padding-bottom: 30px;
+	/*border-bottom: 6px solid #ccc;*/
+}
+
+/* -- All products are in a div .item -- */
+.item img {
+	width: 100%;
+}
+.item .name {
+	font-weight: bold;
+	text-align: center;
+}
+.item .price {
+	text-align: center;
+}
+
+/* -- Best Seller -- */
+#best-seller {
+	/*width: 1020px;*/
+	/* #best-seller's parent is <body> 
+	so percentage is based off the 
+	browser */
+	width: 95%;
+	/* Stop growing when #best-seller div has a width of 800px*/
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: yellow;
+}
+#best-seller .row .item {
+	background-color: #cdcdcd;
+	float: left;
+	width: 300px;
+	padding: 10px;
+	margin: 10px;
+
+	/* Using percentages*/
+	/* Percentage of its parent (originally 1020px) */
+	width: 31.3333%;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: 1%;
+	margin-left: 1%;
+	border: 1px solid black;
+
+	/* Makes padding and border become part of the width of this element */
+	box-sizing: border-box;
+}
+/* Cleaner way to clear floats */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* -- On Sale -- */
+#sale {
+	width: 1360px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: orange;
+	/* Use percentage - this is 100% of the <body> */
+	width: 100%;
+}
+#sale .row .item {
+	background-color: #cdcdcd;
+	float: left;
+	/*width: 300px;
+	padding: 10px;
+	margin: 10px;*/
+
+	/* Use percentages - 23% of #sale */
+	box-sizing: border-box;
+	width: 23%;
+	margin-right: 1%;
+	margin-left: 1%;
+	
+}
+#footer {
+	background-color: black;
+	color: #aaa;
+	font-size: 10px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+
+/* Write media queries for smaller devices (Desktop-first approach) */
+@media(max-width: 991px) {
+	/* Any screen sizes from 0 - 991px will use this CSS */
+	#best-seller {
+		background-color: pink;
+	}
+}
+
+@media(max-width: 767px) {
+	/* Any screen sizes from 0 - 767px will use this CSS */
+	#best-seller {
+		background-color: green;
+	}
+	#best-seller h2 {
+		font-size: 80px;
+	}
+	/* Alternatively - can set a fixed width for certain screen sizes */
+	#sale {
+		width: 400px;
+	}
+	#sale .row .item {
+		width: 48%;
+	}
+}
+@media(max-width: 575px) {
+	/* Any screen sizes from 0 - 575px will use this CSS */
+	#best-seller {
+		background-color: skyblue;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
