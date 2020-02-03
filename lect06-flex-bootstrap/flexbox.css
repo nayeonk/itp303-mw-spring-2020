@@ -1,0 +1,75 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Oswald', sans-serif;
+}
+* {
+	box-sizing: border-box;
+}
+
+/* Colors for each box. */
+.box1 { background-color: #011627; }
+.box2 { background-color: #EB5160; }
+.box3 { background-color: #030301; }
+.box4 { background-color: #00D9C0; }
+.box5 { background-color: #FF0022; }
+
+/* The parent */
+.container {
+ 	border: 10px solid skyblue;
+ 	/* By default, all divs inside this .container will be in one row, left to right */
+ 	display: flex;
+ 	/* By default, all the children will be as tall as the parent */
+ 	height: 500px;
+ 	/* Flex-direction determines the MAIN AXIS (left to right, right to left, top to bot, bot to top) */
+ 	/*flex-direction: row-reverse;
+ 	flex-direction: column;*/
+ 	/*flex-direction: column;*/
+
+ 	/* Make children NOT fit in one row */
+ 	/*flex-wrap: wrap;*/
+ 	flex-wrap: nowrap;
+
+ 	/* Centering along the MAIN AXIS (main axis can be different so justify-content is not always horizontal centering) */
+ 	justify-content: center;
+
+ 	/* Centering along the CROSS AXIS (opposite of main axis) default value is stretch */
+ 	align-items: center;
+}
+
+/* .container's direct children */
+.box {
+	/* Can set a width but by default, width will be small enough that all the children fit in one row */
+  	width: 100px;
+
+	color: white;
+  	font-size: 28px;	
+}
+.box2 {
+	/* Whoever the highest order, gets placed later. Default is order: 0; */
+	order: 2;
+}
+
+/* Can still use media queries to control flexbox */
+@media(min-width: 768px) {
+	.container {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+	.box3 {
+		order: 1;
+	}
+	.box {
+		width: 50%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
