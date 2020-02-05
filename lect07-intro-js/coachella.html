@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coachella</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="http://303.itpwebdev.com/~ta303/assets/css/coachella.css">
+	<style>
+		/* Artists using flexbox*/
+		img {
+			width: 100%;
+		}
+		/* parent of the items I want to put in one row */
+		.row-flexbox {
+			display: flex;
+			justify-content: center;
+		}
+		/* the children -- aka flex items */
+		.row-flexbox .artist-flexbox {
+			background-color: #FEF587;
+			width: 300px;
+			padding: 15px;
+			margin: 0px 10px;
+			text-align: center;
+		}
+		.container {
+			/*background-color: green;*/
+		}
+		/* Don't override bootstrap's classes - in fact, don't mess around with the .col divs */
+		.col-12, .col-sm-6, .col-md-4 {
+			/*background-color: #FEF587;
+			margin-left: 10px;
+			margin-right: 10px;
+			width: 50%;*/
+			background-color: blue;
+		}
+		/* Instead, if needed, nest another div INSIDE .col divs */
+		.artist-inner {
+			background-color: #FEF587;
+			padding: 10px;
+		}
+		/* Might be a better bootstrap way to do it */
+		.artist-bootstrap {
+			display: flex;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>COACHELLA</h1>
+	</div>
+	<div id="artists">
+		<h2>Artists</h2>
+		<div class="row">
+			<div class="artist">
+				<img src="http://303.itpwebdev.com/~ta303/assets/images/ariana.jpg" alt="Ariana Grande">
+				<h3>Ariana Grande</h3>
+				<div class="overlay">APR 14 & 21</div>
+			</div>
+			<div class="artist">
+				<img src="http://303.itpwebdev.com/~ta303/assets/images/gambino.jpg" alt="Childish Gambino">
+				<h3>Childish Gambino</h3>
+				<div class="overlay">APR 12 & 19</div>
+
+			</div>
+			<div class="artist">
+				<img src="http://303.itpwebdev.com/~ta303/assets/images/blackpink.jpg" alt="Black Pink">
+				<h3>Black Pink</h3>
+				<div class="overlay">APR 12 & 19</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Columns using Flexbox -->
+	<div id="artists-flexbox">
+		<h2>Artists using Flexbox</h2>
+		<div class="row-flexbox">
+			<div class="artist-flexbox">
+				<img src="http://303.itpwebdev.com/~ta303/assets/images/ariana.jpg" alt="Ariana Grande">
+				<h3>Ariana Grande</h3>
+				<!-- <div class="overlay">APR 14 & 21</div> -->
+			</div>
+			<div class="artist-flexbox">
+				<img src="http://303.itpwebdev.com/~ta303/assets/images/gambino.jpg" alt="Childish Gambino">
+				<h3>Childish Gambino</h3>
+				<!-- <div class="overlay">APR 12 & 19</div> -->
+			</div>
+			<div class="artist-flexbox">
+				<img src="http://303.itpwebdev.com/~ta303/assets/images/blackpink.jpg" alt="Black Pink">
+				<h3>Black Pink</h3>
+				<!-- <div class="overlay">APR 12 & 19</div> -->
+			</div>
+		</div>
+	</div>
+
+	<!-- Columns using Bootstrap -->
+	<div id="artists-bootstrap" class="container">
+		<div class="row">
+			<h2>Artists using Bootstrap</h2>
+		</div>
+		<div class="row row-bootstrap">
+			<div class="artist-bootstrap col-12 col-sm-6 col-md-4">
+				<!-- Nested another div to customize the artist (color & padding) -->
+				<div class="artist-inner p-5">
+					<img src="http://303.itpwebdev.com/~ta303/assets/images/ariana.jpg" alt="Ariana Grande">
+					<h3 class="text-center">Ariana Grande</h3>
+					<!-- <div class="overlay">APR 14 & 21</div> -->
+				</div>
+			</div>
+			<div class="artist-bootstrap col-12 col-sm-6  col-md-4">
+				<div class="artist-inner">
+					<img src="http://303.itpwebdev.com/~ta303/assets/images/gambino.jpg" alt="Childish Gambino">
+					<h3>Childish Gambino</h3>
+					<!-- <div class="overlay">APR 12 & 19</div> -->
+				</div>
+			</div>
+			<div class="artist-bootstrap col-12  col-sm-6 col-md-4">
+				<div class="artist-inner">
+					<img src="http://303.itpwebdev.com/~ta303/assets/images/blackpink.jpg" alt="Black Pink">
+					<h3>Black Pink</h3>
+					<!-- <div class="overlay">APR 12 & 19</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="about">
+		<div class="about-inner">
+			<h2>About</h2>
+			<p>The Coachella Valley Music and Arts Festival (commonly referred to as Coachella or the Coachella Festival) is an annual music and arts festival held at the Empire Polo Club in Indio, California, located in the Inland Empire's Coachella Valley in the Colorado Desert. It was co-founded by Paul Tollett and Rick Van Santen in 1999, and is organized by Goldenvoice, a subsidiary of AEG Live.[1] The event features musical artists from many genres of music, including rock, indie, hip hop, and electronic dance music, as well as art installations and sculptures. Across the grounds, several stages continuously host live music. The main stages are the: Coachella Stage, Outdoor Theatre, Gobi Tent, Mojave Tent, and Sahara Tent; a smaller Oasis Dome was used in 2006 and 2011, while a new Yuma stage was introduced in 2013 and a Sonora stage in 2017.</p>
+
+				<div id="relative-div">
+					I'm a relative div!!
+				</div>
+				<div id="absolute-div">
+					I'm an absolute div!!
+				</div>
+				<div id="fixed-div">
+					I'm a fixed div!!
+				</div>
+
+				<p>The festival's origins trace back to a 1993 concert that Pearl Jam performed at the Empire Polo Club while boycotting venues controlled by Ticketmaster. The show validated the site's viability for hosting large events, leading to the inaugural Coachella Festival being held over the course of two days in October 1999—just three months after Woodstock '99. After no event was held in 2000, Coachella returned on an annual basis beginning in April 2001, as a single-day event. In 2002, the festival reverted to a two-day format. Coachella was expanded to a third day in 2007 and eventually a second weekend in 2012; it is currently held on consecutive three-day weekends in April, with each weekend having identical lineups. Organizers began permitting spectators to camp on the grounds in 2003, one of several expansions and additions of amenities that have been made in the festival's history.</p>
+
+				<p>Coachella showcases popular and established musical artists, as well as emerging artists and reunited groups. Coachella is one of the largest, most famous, and most profitable music festivals in the United States and all over the world.[2][3] Each Coachella staged from 2013 to 2015 set new records for festival attendance and gross revenues. The 2017 festival was attended by 250,000 people and grossed $114.6 million. The success of Coachella led to Goldenvoice establishing two additional music festivals at the site, the classic rock-oriented Desert Trip in 2016, and the annual Stagecoach country music festival in 2007.</p>
+			</div>
+		</div>
+		<div id="footer">
+			Copyright 2019.
+		</div>
+	</div>
+
+</body>
+</html>

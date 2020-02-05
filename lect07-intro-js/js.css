@@ -1,0 +1,111 @@
+.red {
+	color: red;
+}
+.hide {
+	display: none;
+}
+.clearfloat {
+	clear: both;
+}
+.section {
+	width: 600px;
+	margin: 0px auto 50px;
+}
+
+.color-box {
+	border: 1px solid #000;
+	width: 88px;
+	height: 88px;
+	line-height: 88px;
+	margin: 5px;
+	text-align: center;
+	float: left;
+
+	cursor: pointer;
+}
+
+.color-box:nth-of-type(1) {
+	background-color: #000;
+	color: #FFF;
+}
+
+.color-box:nth-of-type(2) {
+	background-color: #FFF;
+}
+
+.color-box:nth-of-type(3) {
+	background-color: #CCC;
+}
+
+.color-box:nth-of-type(4) {
+	background-color: #777;
+}
+
+.color-box:nth-of-type(5) {
+	background-color: #FC0;
+}
+
+.color-box:nth-of-type(6) {
+	background-color: #900;
+}
+
+#kanye {
+	border: 1px solid #000;
+	max-width: 300px;
+	margin: auto;
+	display: block;
+}
+
+#button-section {
+	text-align: center;
+}
+
+#button-section h2, #button-section p {
+	text-align: left
+}
+
+#button-section button {
+	padding: 20px;
+	font-size: 1.2em;
+	margin: 0 10px;
+}
+
+#dom-section h3 {
+	cursor: pointer;
+	border: 1px solid #000;
+	padding: 10px;
+}
+
+#dom-section h3:hover {
+	background-color: #CCC;
+}
+
+#dom-section p {
+	padding: 0px 10px;
+}
+
+/* Desktops */
+@media (max-width: 1199px) {
+
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+
+}
+
+/* Phones */
+@media (max-width: 767px) {
+	.section {
+		width: auto;
+	}
+
+	#color-wrapper, #thumbnail-wrapper {
+		width: 300px;
+		margin: auto;
+	}
+
+	#button-section button {
+		margin: 10px;
+	}
+}
