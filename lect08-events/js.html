@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lorem Ipsum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js.css">
+</head>
+<body>
+	<div class="section">
+		<h1>JS Playground</h1>
+	</div> <!-- .section -->
+
+	<div id="dom-section" class="section">
+		<h2>DOM selectors 101</h2>
+		<p id="first" class="paragraph">I am the first paragraph. Use JS to change me.</p>
+		<p id="second" class="paragraph">I am the second paragraph. Use JS to change me.</p>
+	</div> <!-- #dom-section -->
+
+	<div id="button-section" class="section">
+		<h2>Alert Window</h2>
+		<p>Test these buttons:</p>
+		<button id="btn-click">Don't Click Me</button>
+		<button id="btn-touch">Don't Touch Me</button>
+	</div> <!-- #button-section -->
+
+	<div id="kanye-section" class="section">
+		<h2>Image Switch</h2>
+		<p>Hover over the image to flip it:</p>
+		<img id="kanye" src="images/kanye-1.jpg" alt="Kanye West">
+	</div> <!-- #kanye-section -->
+
+	<div id="color-wrapper">
+		<div class="color-box" id="box1" data-color="#000">
+			#000
+		</div>
+		<div class="color-box" id="box2" data-color="#FFF">
+			#FFF
+		</div>
+		<div class="color-box" id="box3" data-color="#CCC">
+			#CCC
+		</div>
+		<div class="color-box" id="box4" data-color="#777">
+			#777
+		</div>
+		<div class="color-box" id="box5" data-color="#FC0">
+			#FC0
+		</div>
+		<div class="color-box" id="box6" data-color="#900">
+			#900
+		</div>
+
+		<div class="clearfloat"></div>
+	</div> <!-- #color-wrapper -->
+
+	<div id="dom-section" class="section">
+		<h2>DOM Traversal</h2>
+
+		<h3>Lorem ipsum dolor sit amet</h3>
+
+		<p>Consectetur adipiscing elit. Proin nibh eros, tincidunt at metus non, ultrices vulputate felis. Suspendisse potenti. Vivamus sit amet cursus dolor, at lacinia dui. Pellentesque fringilla enim nibh, quis lobortis ante dictum vel. Etiam tortor turpis, venenatis sit amet est et, dictum auctor dolor. Etiam vehicula iaculis pharetra. Sed viverra interdum efficitur.</p>
+
+		<h3>Quisque volutpat eros ullamcorper</h3>
+		<p>Velit pulvinar, at tincidunt orci placerat. Morbi blandit neque est, id posuere urna accumsan non. Pellentesque a ligula sed velit elementum efficitur. Proin ex lectus, porta vitae accumsan ut, mattis ac ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam nec mauris tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed diam volutpat odio mollis accumsan. Proin tempus erat sed lacinia condimentum. Fusce molestie ornare finibus. Nunc dictum vulputate scelerisque. Donec elementum semper arcu, eget blandit magna varius et. Integer pulvinar sem non sem volutpat varius. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+
+		<h3>Nulla elit eros</h3>
+		<p>Interdum sed, finibus in nibh. Praesent eros lectus, fermentum at enim non, porta ultrices nisi. Aliquam odio libero, commodo id pulvinar eget, gravida non turpis. In mi massa, placerat ut ex sed, mollis imperdiet elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi ultrices scelerisque fermentum. Quisque luctus sapien vitae dignissim ornare. Donec non lorem sagittis, condimentum augue vel, suscipit nisl. Praesent blandit eu ligula eu dictum. Donec faucibus purus in urna mollis, nec vulputate sem mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam vulputate dignissim libero, ut blandit massa ultrices et. Fusce mattis luctus nibh. Donec rhoncus pretium lectus id sodales.</p>
+
+	</div> <!-- #dom-section -->
+
+	<script>
+// In here, write JS
+console.log("Hey!!!");
+
+let firstname = "Nayeon";
+let lastname = "Kim";
+
+console.log(firstname );
+
+//window.alert(firstname + lastname);
+
+// Declare functions
+function sayHello() {
+	// window.alert("Hello!!!");
+}
+
+// Call the function
+sayHello();
+
+// Another way to declare function
+let sayHello2 = function() {
+	// alert("Hello!!");
+}
+// Call the function
+sayHello2();
+
+// JS can grab any element on the HTML page
+
+console.log( document.getElementById("first") );
+
+// JS can change the text of any element
+document.getElementById("first").innerHTML = "My  :(";
+
+// JS can also change the CSS of any element
+document.getElementById("first").style.color = "purple";
+
+document.getElementById("first").style.backgroundColor = "yellow";
+
+// Use JS to add a CSS class to any element
+document.getElementById("first").classList.add("red");
+
+// using querySelector() to select elements
+document.querySelector("#second").innerHTML = "hey";
+
+// Using queryselector for classes - querySelector only selects the FIRST match
+document.querySelector(".paragraph").style.fontSize = "48px";
+
+// querySelectorAll - it returns an array of ALL matches
+//document.querySelectorAll(".paragraph").style.fontSize = "48px";
+
+console.log( document.querySelectorAll(".paragraph") );
+
+// Run through the paragraphs array and apply font size to each item in the array
+let paragraphs = document.querySelectorAll(".paragraph");
+
+// for loop
+for( let i = 0; i < paragraphs.length; i++ ) {
+	paragraphs[i].style.fontSize = "48px";
+	paragraphs[i].style.fontFamily = "Arial";
+}
+
+// ---- EVENT DRIVEN PROGRAMMING
+document.querySelector("#btn-click").onclick = function() {
+	alert("Don't click me!!");
+}
+// document.querySelector("#btn-click").onclick = sayHello;
+
+// document.querySelector("#btn-touch").onmouseenter = function() {
+// 	alert("I said don't touch me!!!");
+// }
+
+// A newer way to write event listeners
+// document.querySelector("#btn-touch").addEventListener("mouseenter", function() {
+// 	alert("Don't touch me!!!");
+// });
+document.querySelector("#btn-touch").addEventListener("mouseenter", sayHello);
+
+// Swap kanye's image on mouse over
+// let kanye = document.querySelector("#kanye")
+document.querySelector("#kanye-section").onmouseenter = function() {
+	// document.querySelector("#kanye").src = "images/kanye-2.jpg";
+	// THIS refers to the element that the event happened on
+	this.src = "images/kanye-2.jpg";
+	
+}
+document.querySelector("#kanye").onmouseleave = function() {
+	// document.querySelector("#kanye").src = "images/kanye-1.jpg";
+	this.src = "images/kanye-1.jpg";
+}
+
+// -- Color boxes change the bg color of browser
+// The long way to add event listeners to multiple elements
+// document.querySelector("#box1").onclick = function() {
+// 	document.body.style.backgroundColor = "#000";
+// }
+// document.querySelector("#box2").onclick = function() {
+// 	document.body.style.backgroundColor = "#FFF";
+// }
+// document.querySelector("#box3").onclick = function() {
+// 	document.body.style.backgroundColor = "#CCC";
+// }
+
+// Select multiple elements by class
+let boxes = document.querySelectorAll(".color-box");
+console.log(boxes);
+
+// Loop through all the boxes and add an event handler to EACH box
+for( let i = 0; i < boxes.length; i++) {
+	boxes[i].onclick = function() {
+		// document.body.style.backgroundColor = boxes[i].innerHTML;
+		// dataset refers to the "data-" attribute in the boxes div
+		document.body.style.backgroundColor = boxes[i].dataset.color;
+	}
+}
+
+// -- Accordion
+// Grabs all <h3> tags in #dom-section
+let titles = document.querySelectorAll("#dom-section h3");
+
+// Add an event handler to all the <h3> tags
+for(let i = 0; i < titles.length; i++) {
+	titles[i].onclick = function() {
+		//console.log(this.nextSibling);
+		// This one ensure we get the next ELEMENT (aka wrapped in a tag)
+		console.log(this.nextElementSibling);
+
+		// To toggle? use conditional statement
+		// If the sibling HAS the class "hide", then remove the class
+		if( this.nextElementSibling.classList.contains("hide") ) {
+			this.nextElementSibling.classList.remove("hide");
+		}
+		else {
+			this.nextElementSibling.classList.add("hide");
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
