@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Objects</title>
+	<style>
+		#people {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<h1>People</h1>
+	<div id="people">
+	</div>
+
+<script>
+
+// Two ways to create an object in JS
+
+// 1. Literal syntax
+let tommy = {
+	name: "Tommy Trojan",
+	email: "ttrojan@usc.edu",
+	age: 22,
+	hobbies: ["taking photos", "standing", "posing"],
+	phone: {
+		cell: "123-123-1234",
+		work: "555-555-5555"
+	},
+	greet: function() {
+		console.log("Hi!");
+	}
+}
+console.log(tommy);
+console.log(tommy.age);
+console.log(tommy.email);
+console.log(tommy.hobbies[0]);
+console.log(tommy.phone.cell);
+tommy.greet();
+
+
+// 2. Constructor Function Syntax
+// reminds you of declaring a classs, then creating instances out of this class
+function Person(fullName, age) {
+	this.name = fullName;
+	this.age = age;
+	this.greent = function() {
+		console.log("Hi!");
+	}
+}
+// Create instances
+let joe = new Person("Joe Smith", 35);
+let jimmy = new Person("Jimmy Kimmel", 44);
+
+console.log(jimmy);
+console.log(jimmy.name);
+
+// When working with a lot of objects, we can store them in an array
+
+let contactList = [];
+contactList.push(joe,jimmy);
+console.log("--- LIST STARTS HERE")
+console.log(contactList);
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

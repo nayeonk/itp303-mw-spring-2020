@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+	<style>
+		form {
+			width: 500px;
+		}
+		.form-row {
+			margin-bottom: 10px;
+			display: flex;
+		}
+		label {
+			padding-right: 10px;
+			width: 60px;
+		}
+		input {
+			width: 150px;
+			height: 20px;
+		}
+		.error {
+			color: red;
+			font-style: italic;
+			margin-left: 10px;
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="text">Form</h1>
+
+	<form id="form" method="" action="">
+
+		<div class="form-row">
+			<label for="name-input">Name: </label>
+			<input type="text" id="name-input" name="name-input" placeholder="Tommy Trojan" />
+			<div class="error">Error message</div>
+		</div>
+
+		<div class="form-row">
+			<label for="age-input">Age: </label>
+			<input type="text" id="age-input" name="age-input" /> 
+			<div class="error">Error message</div>
+		</div>
+
+		<div class="form-row">
+			<button type="submit" id="go-button">Go</button>
+		</div>
+
+	</form>
+
+
+
+<script>
+	// Keydown vs keyup vs keypress
+	// document.onkeydown = function() {
+	// 	console.log("onkeydown");
+	// }
+	// document.onkeyup = function() {
+	// 	console.log("onkeyup");
+	// }
+	
+	let counter = 0;
+	// keypress is very similar to keydown BUT it doens't listen to arrow or control keys. only for "typing text"
+	// document.onkeypress = function(event) {
+	// 	// console.log(event);
+	// 	console.log(event.key);
+	// 	console.log(event.code);
+	// 	if (counter == 0) {
+	// 		document.querySelector("#text").innerHTML = "";
+	// 	}
+	// 	counter++;
+	// 	document.querySelector("#text").innerHTML = document.querySelector("#text").innerHTML + event.key;
+	// 	if(event.key == "f") {
+	// 		alert("f is not allowed");
+	// 	}
+	// }
+
+	document.onscroll = function(){
+
+	}
+
+
+	let number = 7;
+	let number2 = "7";
+	// console.log(number);
+	// console.log(number2);
+
+	// to convert string to integer
+	number2 = parseInt(number2);
+
+	let number3 = "100.88";
+	// console.log(parseFloat(number3));
+	// console.log(1 + 7);
+	// console.log("1" + "7");
+	// console.log(1 + number2);
+
+	// console.log(1/2);
+
+	// console.log(1/0);
+	// console.log(0/"hi");
+	// console.log(0/"1");
+
+	let name = "nayeon";
+	// console.log(name[0]);
+	// console.log(name.length);
+	// console.log(name.indexOf("n"));
+	// console.log(name.lastIndexOf("n"));
+	// console.log(name.toUpperCase());
+
+	// onchange vs oninput vs onsubmit
+	document.querySelector("#name-input").onchange = function() {
+
+		console.log("hey");
+
+	}
+	document.querySelector("#name-input").oninput = function() {
+
+		console.log("oninput");
+		let nameInput = document.querySelector("#name-input").value;
+		if( nameInput.length < 3 ) {
+			// Show my error message - its sibling
+			document.querySelector("#name-input").nextElementSibling.style.visibility = "visible";
+			document.querySelector("#name-input").nextElementSibling.innerHTML = "Name cannot be empty";
+		}
+		else {
+			document.querySelector("#name-input").nextElementSibling.style.visibility = "hidden";
+		}
+
+
+	}
+	document.querySelector("#form").onsubmit = function(event) {
+
+		// Prevents the default event that occurs (e.g. prevents this form to be submitted)
+		event.preventDefault();
+		// another way to prevent default
+		// return false;
+
+		console.log("onsubmit!!");
+
+		// Validate the user input
+		// Grab what the user typed in #name-input
+		let nameInput = document.querySelector("#name-input").value;
+		console.log(nameInput);
+		let ageInput = document.querySelector("#age-input").value;
+		console.log(ageInput);
+
+		// If name is empty, show the error message -- note: this statement runs every time user submits this form
+		if( nameInput.length == 0 ) {
+			// Show my error message - its sibling
+			document.querySelector("#name-input").nextElementSibling.style.visibility = "visible";
+			document.querySelector("#name-input").nextElementSibling.innerHTML = "Name cannot be empty";
+		}
+		else {
+			document.querySelector("#name-input").nextElementSibling.style.visibility = "hidden";
+		}
+		
+
+		
+
+		// Eventually submit the form
+		// document.querySelector("#form").submit();
+
+	}
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
