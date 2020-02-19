@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>iTunes API</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+	<style>
+		.table th, .table td {
+			text-align: center;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<label for="bgInput">Choose a background color: </label>
+			<select id="bgInput">
+				<option value="white">White</option>
+				<option value="blue">Blue</option>
+				<option value="pink">Pink</option>
+			</select>
+		</div>
+
+		<div class="row">
+			<h1 class="col-12 mt-4">iTunes JSON API</h1>
+		</div> <!-- .row -->
+
+		<div class="row">
+
+			<form action="" method="" class="col-12" id="search-form">
+				<div class="form-row">
+
+					<div class="col-12 mt-4 col-sm-6 col-lg-4">
+						<label for="search-id" class="sr-only">Search:</label>
+						<input type="text" name="" class="form-control" id="search-id" placeholder="Search...">
+					</div>
+
+					<div class="col-12 mt-4 col-sm-4 col-md-3 col-lg-2">
+						<label for="limit-id" class="sr-only">Number of results:</label>
+						<select name="" class="form-control" id="limit-id">
+							<option value="5">5 results</option>
+							<option value="10">10 results</option>
+							<option value="25">25 results</option>
+							<option value="50">50 results</option>
+							<option value="100">100 results</option>
+						</select>
+					</div>
+
+					<div class="col-12 mt-4 col-sm-auto">
+						<button type="submit" class="btn btn-primary btn-block">Search</button>
+					</div>
+
+				</div> <!-- .form-row -->
+			</form>
+
+		</div> <!-- .row -->
+
+		<div class="row">
+
+			<div class="col-12 mt-4">
+				Showing <span id="num-results" class="font-weight-bold">1</span> result(s).
+			</div>
+
+			<table class="table table-responsive table-striped col-12 mt-3">
+				<thead>
+					<tr>
+						<th>Cover</th>
+						<th>Artist</th>
+						<th>Track</th>
+						<th>Album</th>
+						<th>Preview</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td><img src="http://is2.mzstatic.com/image/thumb/Music/v4/40/d0/29/40d029b5-4c32-53d2-69d1-ea04a513c345/source/100x100bb.jpg"></td>
+						<td>The Beatles</td>
+						<td>Here Comes the Sun</td>
+						<td>Abbey Road</td>
+						<td><audio src="https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/46/48/7d/46487d90-d40c-7c47-7285-5edbfd0fd2c0/mzaf_5516723347634890825.plus.aac.p.m4a" controls></audio></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div> <!-- .row -->
+
+	</div> <!-- .container-fluid -->
+	
+	<!-- Add external JS file -->
+	<script src="main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
