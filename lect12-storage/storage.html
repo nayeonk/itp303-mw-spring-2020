@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Storage</title>
+	<style>
+		#container {
+			border: 3px solid black;
+			padding: 20px;
+			width: 500px;
+			margin: 0 auto;
+		}
+		h1 {
+			margin-top: 0;
+		}
+		.form-row {
+			display: flex;
+			margin-bottom: 10px;
+		}
+		label {
+			width: 150px;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Welcome, <span id="name-display">Stranger</span>!</h1>
+		<form id="form">
+			<div class="form-row">
+				<label for="name">Name:</label>
+				<input type="text" id="name"/>
+			</div>
+			<div class="form-row">
+				<label for="bgcolor">Background Color:</label>
+				<select id="bgcolor">
+					<option value="white">White</option>
+					<option value="pink">Pink</option>
+					<option value="skyblue">Skyblue</option>
+					<option value="lightgreen">Lightgreen</option>
+				</select>
+			</div>
+			<button type="submit">Save</button>
+		</form>
+		<hr>
+		<div>
+			<h2>Fruits</h2>
+			<button id="fruit-button">Display fruits</button>
+			<p id="fruitsDisplay"></p>
+		</div>
+	</div>
+	<script>
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
