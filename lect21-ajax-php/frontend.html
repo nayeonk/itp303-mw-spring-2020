@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AJAX and PHP</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+	<style>
+		li {
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div id="test-output"></div>
+			<h1 class="col-12 mt-3">Song DB Search</h1>
+		</div> <!-- .row -->
+
+		<div class="row">
+			<form action="" method="" class="form-inline col-12 mt-3">
+				<div class="form-group">
+					<label for="search-term-id" class="sr-only">Search:</label>
+					<input type="text" class="form-control" id="search-term-id" placeholder="Search..." name="search-term">
+				</div>
+				<button type="submit" class="btn btn-primary ml-3">Search</button>
+			</form>
+		</div> <!-- .row -->
+
+		<div class="row">
+
+			<h4 class="col-12 mt-4">Search Results:</h4>
+
+			<div class="col-12">
+				<ol id="search-results">
+					<li>Track Name 1</li>
+					<li>Track Name 2</li>
+				</ol>
+			</div>
+
+		</div> <!-- .row -->
+	</div> <!-- .container -->
+
+<script>
+
+// --- FORM HANDLING
+document.querySelector("form").onsubmit = function(event) {
+	// Prevent the form from actually submitting
+	event.preventDefault();
+
+	// Get user's input for search term
+	let searchTerm = document.querySelector("#search-term-id").value.trim();
+
+	// Make AJAX request
+	ajaxGet("backend.php?term=" + searchTerm, function(results) {
+
+		// This code will run when we get a succesful response back from backend.php
+		console.log(results);
+
+		// Convert JSON string to JS objects
+		results = JSON.parse(results);
+		console.log(results);
+
+		// Grab the list element
+		let resultsList = document.querySelector("#search-results");
+
+		// Clear all previous results
+		while( resultsList.hasChildNodes() ) {
+			resultsList.removeChild(resultsList.lastChild);
+		}
+
+		// Run through the results and apppend them to the resultList
+		for(let i = 0; i < results.length; i++) {
+			let li = document.createElement("li");
+			li.innerHTML = results[i].name;
+			resultsList.appendChild(li);
+		}
+
+	});
+
+}
+
+	// Call the ajaxGet function
+	// ajaxGet("backend.php?firstName=Tommy&lastName=Trojan", function(results){
+	// 	// This code will get run when a response is received from the backend.php
+	// 	console.log(results);
+
+	// 	// Got a JSON STRING back. Need to convert JSON STRING into JS objects
+	// 	results = JSON.parse(results);
+	// 	console.log(results.first_name);
+	// 	console.log(results.last_name);
+
+	// 	// Can display this info on the browser
+	// 	document.querySelector("#test-output").innerHTML = results.first_name;
+	// });
+
+	// Call the ajaxPost cunction
+	// ajaxPost("backend.php", "firstName=Tommy&lastName=Torjan", function(results) {
+	// 	// This code will run when a response is received from the backend.php
+	// 	console.log(results);
+	// });
+
+	function ajaxGet(endpointUrl, returnFunction){
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', endpointUrl, true);
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				if (xhr.status == 200) {
+					// When ajax call is complete, call this function, pass a string with the response
+					returnFunction( xhr.responseText );
+				} else {
+					alert('AJAX Error.');
+					console.log(xhr.status);
+				}
+			}
+		}
+		xhr.send();
+	};
+
+	function ajaxPost(endpointUrl, postData, returnFunction){
+		var xhr = new XMLHttpRequest();
+		xhr.open('POST', endpointUrl, true);
+		// POST request usually need some extar header information.
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		xhr.onreadystatechange = function(){
+			if (xhr.readyState == XMLHttpRequest.DONE) {
+				if (xhr.status == 200) {
+					returnFunction( xhr.responseText );
+				} else {
+					alert('AJAX Error.');
+					console.log(xhr.status);
+				}
+			}
+		}
+		// Send POST data through this method
+		xhr.send(postData);
+	};
+	
+</script>
+
+</body>
+</html>
